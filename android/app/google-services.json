@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "312941970106",
+    "project_id": "explorer-1aca6",
+    "storage_bucket": "explorer-1aca6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312941970106:android:9840efc1eb648dcbb97883",
+        "android_client_info": {
+          "package_name": "com.ninetynine.travel_explorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312941970106-1ubbm0jfvhf7p65m3vl83ta7jd9rjvdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXbGx0AmwDt79VmKYUDqMX-2Qt2uq6cns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312941970106-1ubbm0jfvhf7p65m3vl83ta7jd9rjvdm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "312941970106-st53rkgltv52ig2vs4th673dord1540b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ninetynine.explorer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

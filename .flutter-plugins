@@ -1,0 +1,19 @@
+# This is a generated file; do not edit or check into version control.
+cloud_firestore=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-1.0.7/
+cloud_firestore_web=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-1.0.7/
+firebase_analytics=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-7.1.1/
+firebase_analytics_web=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics_web-0.2.0+1/
+firebase_core=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.2.0/
+firebase_core_web=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0/
+flutter_plugin_android_lifecycle=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.1/
+geocoder=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/geocoder-0.2.1/
+google_maps_flutter=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.3/
+location=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/location-4.2.1/
+location_web=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/location_web-3.1.0/
+path_provider_linux=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
+path_provider_windows=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.1/
+shared_preferences=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.5/
+shared_preferences_linux=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-2.0.0/
+shared_preferences_macos=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.0/
+shared_preferences_web=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-2.0.0/
+shared_preferences_windows=/Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.0.0/
