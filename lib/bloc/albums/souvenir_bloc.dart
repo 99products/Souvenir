@@ -5,15 +5,8 @@ import 'dart:io';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_explorer/api/exceptions.dart';
 import 'package:travel_explorer/api/services.dart';
-import 'package:travel_explorer/api/services.dart';
-import 'package:travel_explorer/bloc/albums/souvenir_events.dart';
-import 'package:travel_explorer/bloc/albums/souvenir_events.dart';
-import 'package:travel_explorer/bloc/albums/souvenir_events.dart';
-import 'package:travel_explorer/bloc/albums/souvenir_events.dart';
 import 'package:travel_explorer/bloc/albums/souvenir_events.dart';
 import 'package:travel_explorer/bloc/albums/souvenir_states.dart';
-import 'package:travel_explorer/bloc/albums/souvenir_states.dart';
-import 'package:travel_explorer/model/souvenir_list.dart';
 import 'package:travel_explorer/model/souvenir_list.dart';
 
 class SouvenirBloc extends Bloc<SouvenirEvents, SouvenirState> {
@@ -29,7 +22,8 @@ class SouvenirBloc extends Bloc<SouvenirEvents, SouvenirState> {
       case SouvenirEvents.fetchSouvenirCollections:
         yield SouvenirLoading();
         try {
-          listRegion = await collectionsRepo.getFirebaseRegionsValues(); //getSouvenirCollectionList();
+          listRegion = await collectionsRepo
+              .getFirebaseRegionsValues(); //getSouvenirCollectionList();
           yield SouvenirLoaded(regionData: listRegion);
         } on SocketException {
           yield SouvenirListError(
