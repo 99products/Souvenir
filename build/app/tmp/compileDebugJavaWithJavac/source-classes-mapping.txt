@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/ninetynine/travel_explorer/BuildConfig.java
- com.ninetynine.travel_explorer.BuildConfig
