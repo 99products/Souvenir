@@ -1,0 +1,4 @@
+enum SouvenirEvents {
+  fetchSouvenirCollections,
+  fetchUserLocations,
+}

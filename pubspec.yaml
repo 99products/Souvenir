@@ -38,6 +38,7 @@ dependencies:
   shared_preferences: 2.0.5
   location: ^4.2.0
   geocoder: ^0.2.1
+  group_list_view: ^1.1.1
 
 dev_dependencies:
   flutter_test:

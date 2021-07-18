@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'api/services.dart';
-import 'bloc/albums/souvenir_bloc.dart';
+import 'bloc/souvenir_bloc.dart';
 import 'screens/souvenir_screen.dart';
 
 void main() async {

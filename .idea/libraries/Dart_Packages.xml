@@ -212,6 +212,13 @@
             </list>
           </value>
         </entry>
+        <entry key="group_list_view">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/group_list_view-1.1.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="http">
           <value>
             <list>
@@ -494,6 +501,7 @@
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/geocoder-0.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-2.0.4/lib" />
+      <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/group_list_view-1.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib" />
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../tools/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3/lib" />

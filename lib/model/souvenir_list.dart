@@ -17,18 +17,14 @@ class RegionsData {
   String title;
   String description;
   String shortDescription;
-  int itemsCount;
-  var geoLocation;
-  double distance;
+  List<ItemsData> items;
 
   RegionsData({
     this.id,
     this.title,
     this.description,
     this.shortDescription,
-    this.itemsCount,
-    this.geoLocation,
-    this.distance,
+    this.items,
   });
 
   factory RegionsData.fromJson(Map<String, dynamic> json) => RegionsData(
@@ -36,48 +32,54 @@ class RegionsData {
     title: json["title"],
     description: json["description"],
     shortDescription: json["shortDescription"],
-    itemsCount: json["itemsCount"],
-    geoLocation: json["geoLocation"],
-    distance: json["distance"],
   );
 
   Map<String, dynamic> toJson() => {
     "title": title,
     "id": id,
     "description": description,
-    "itemsCount": itemsCount,
-    "geoLocation": geoLocation,
-    "distance": distance,
   };
 }
 class ItemsData {
   String id;
   String title;
   String shortDescription;
-  var geoLocation;
-  double distance;
+  String latitude;
+  String longitude;
+  int distanceFromUserLocation;
 
   ItemsData({
     this.id,
     this.title,
     this.shortDescription,
-    this.geoLocation,
-    this.distance,
+    this.latitude,
+    this.longitude,
+    this.distanceFromUserLocation,
   });
 
   factory ItemsData.fromJson(Map<String, dynamic> json) => ItemsData(
     title: json["title"],
     id: json["id"],
     shortDescription: json["shortDescription"],
-    geoLocation: json["geoLocation"],
-    distance: json["distance"],
+    latitude: json["latitude"],
+    longitude: json["longitude"]
   );
 
   Map<String, dynamic> toJson() => {
     "title": title,
     "id": id,
     "shortDescription": shortDescription,
-    "geoLocation": geoLocation,
-    "distance": distance,
+    "latitude": latitude,
+    "longitude":longitude,
   };
+}
+
+class ProfileData {
+  String name;
+  String userLocation;
+
+  ProfileData({
+    this.name,
+    this.userLocation,
+  });
 }

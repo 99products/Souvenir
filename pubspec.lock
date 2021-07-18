@@ -205,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
+  group_list_view:
+    dependency: "direct main"
+    description:
+      name: group_list_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1"
   http:
     dependency: "direct main"
     description:

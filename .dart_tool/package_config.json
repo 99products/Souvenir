@@ -182,6 +182,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "group_list_view",
+      "rootUri": "file:///Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/group_list_view-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http",
       "rootUri": "file:///Users/vasanthr/Documents/Development/tools/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3",
       "packageUri": "lib/",
@@ -404,7 +410,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-07-13T13:14:13.238742Z",
+  "generated": "2021-07-18T08:27:04.693155Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }
