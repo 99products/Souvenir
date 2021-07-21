@@ -1,9 +1,12 @@
-build/
+build/**
 .dart_tool/
 .idea/
 .vscode/
+**/android/.idea/
+.DS_Store
 
 .packages
 .flutter-plugins
-.flutter-plugin-dependencies
+.flutter-plugins-dependencies
+pubspec.lock
 .env
