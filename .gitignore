@@ -3,8 +3,9 @@ build/**
 .idea/
 .vscode/
 **/android/.idea/
-.DS_Store
+**/android/gradle/
 
+.DS_Store
 .packages
 .flutter-plugins
 .flutter-plugins-dependencies
