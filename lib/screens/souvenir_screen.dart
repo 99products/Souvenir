@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:group_list_view/group_list_view.dart';
 import 'package:location/location.dart';
@@ -25,44 +26,47 @@ class _SouvenirScreenState extends State<SouvenirScreen> {
   List<RegionsData> _regionsData = [];
 
   LocationData userLocationData;
-ProfileData objProfileData;
+  ProfileData objProfileData;
   @override
   void initState() {
     super.initState();
 
-
     objProfileData = new ProfileData();
-    objProfileData.name= 'Name';
-    objProfileData.userLocation= 'Fetching your location details...';
+    objProfileData.name = 'Name';
+    objProfileData.userLocation = 'Fetching your location details...';
 
     Future.delayed(const Duration(milliseconds: 500), () {
-
       print("Delay Binding");
 //GetFirebase Values and calculate distance based on the user  location
       _loadUserLocation();
       _loadSouvenirs();
-
     });
   }
 
   _loadSouvenirs() async {
     context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
   }
-_loadUserLocation()
-{
-  //context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
 
-  getLocationData().then((locationData){
-    userLocationData = locationData;
-    //To Update Location details
-    getLocationAddress(userLocationData).then((strAddress){
-      this.setState(() {
-        objProfileData.userLocation = strAddress;
+  _loadUserLocation() {
+    //context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
+
+    getLocationData().then((locationData) {
+      userLocationData = locationData;
+      //To Update Location details
+      getLocationAddress(userLocationData).then((strAddress) {
+        this.setState(() {
+          objProfileData.userLocation = strAddress;
+        });
       });
     });
 
-  });
-}
+    SystemChannels.lifecycle.setMessageHandler((msg) {
+      debugPrint('SystemChannels> $msg');
+      if (msg == AppLifecycleState.resumed.toString()) {
+        // TODO Check wallet connection state
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +75,8 @@ _loadUserLocation()
           preferredSize: Size.fromHeight(180.0),
           child: AppBar(
             automaticallyImplyLeading: false, // hides leading widget
-            flexibleSpace: AppBarWidget(profileData:objProfileData),
-          )
-      ),
+            flexibleSpace: AppBarWidget(profileData: objProfileData),
+          )),
       body: Container(
         child: _body(),
       ),
@@ -85,27 +88,28 @@ _loadUserLocation()
       children: [
         BlocBuilder<SouvenirBloc, SouvenirState>(
             builder: (BuildContext context, SouvenirState state) {
-              if (state is SouvenirListError) {
-                final error = state.error;
-                String message = '${error.message}\nTap to Retry.';
-                return ErrorTxt(
-                  message: message,
-                  onTap: _loadSouvenirs,
-                );
-              }
-              if (state is SouvenirLoaded) {
-                //List<MyItinerary> itineraries = state.itineraries;
-                _regionsData = state.regionData;
-                return _loadList(_regionsData);
-              }
-              return Loading();
-            }),
+          if (state is SouvenirListError) {
+            final error = state.error;
+            String message = '${error.message}\nTap to Retry.';
+            return ErrorTxt(
+              message: message,
+              onTap: _loadSouvenirs,
+            );
+          }
+          if (state is SouvenirLoaded) {
+            //List<MyItinerary> itineraries = state.itineraries;
+            _regionsData = state.regionData;
+            return _loadList(_regionsData);
+          }
+          return Loading();
+        }),
       ],
     );
   }
 
   Widget _loadList(List<RegionsData> objListRegionData) {
-    return Expanded(child: GroupListView(
+    return Expanded(
+        child: GroupListView(
       sectionsCount: objListRegionData.length,
       countOfItemInSection: (int section) {
         return objListRegionData[section].items.length;
@@ -131,10 +135,15 @@ _loadUserLocation()
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Card(
         elevation: 8,
-        child:InkWell(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetailScreen(selectedItemData:objItems)),);
-            },
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ItemDetailScreen(selectedItemData: objItems)),
+            );
+          },
           child: ItemRow(itemsData: objItems),
         ),
       ),
