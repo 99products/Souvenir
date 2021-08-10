@@ -17,3 +17,18 @@ class UnknownException {
   var message;
   UnknownException(this.message);
 }
+
+class InvalidContractFileException {
+  var message;
+  InvalidContractFileException(this.message);
+}
+
+class EtheriumClientException {
+  var message;
+  EtheriumClientException(this.message);
+}
+
+class EnviromentFileException {
+  var message;
+  EnviromentFileException(this.message);
+}

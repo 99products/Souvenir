@@ -59,4 +59,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.github.WalletConnect:kotlin-walletconnect-lib:0.9.6'
+    implementation 'com.squareup.moshi:moshi:1.8.0'
+    implementation "org.java-websocket:Java-WebSocket:1.4.0"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.github.komputing:khex:1.1.2"
 }

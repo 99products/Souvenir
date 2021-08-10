@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:group_list_view/group_list_view.dart';
 import 'package:location/location.dart';
@@ -30,10 +31,9 @@ ProfileData objProfileData;
   void initState() {
     super.initState();
 
-
     objProfileData = new ProfileData();
-    objProfileData.name= 'Name';
-    objProfileData.userLocation= 'Fetching your location details...';
+    objProfileData.name = 'Name';
+    objProfileData.userLocation = 'Fetching your location details...';
 
     _loadSouvenirs();
   }
@@ -76,9 +76,8 @@ ProfileData objProfileData;
           preferredSize: Size.fromHeight(180.0),
           child: AppBar(
             automaticallyImplyLeading: false, // hides leading widget
-            flexibleSpace: AppBarWidget(profileData:objProfileData),
-          )
-      ),
+            flexibleSpace: AppBarWidget(profileData: objProfileData),
+          )),
       body: Container(
         child: _body(),
       ),
@@ -108,7 +107,8 @@ ProfileData objProfileData;
   }
 
   Widget _loadList(List<RegionsData> objListRegionData) {
-    return Expanded(child: GroupListView(
+    return Expanded(
+        child: GroupListView(
       sectionsCount: objListRegionData.length,
       countOfItemInSection: (int section) {
         return objListRegionData[section].items.length;
@@ -134,10 +134,15 @@ ProfileData objProfileData;
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Card(
         elevation: 8,
-        child:InkWell(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ItemDetailScreen(selectedItemData:objItems)),);
-            },
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ItemDetailScreen(selectedItemData: objItems)),
+            );
+          },
           child: ItemRow(itemsData: objItems),
         ),
       ),
