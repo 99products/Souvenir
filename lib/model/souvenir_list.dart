@@ -18,6 +18,7 @@ class RegionsData {
   String description;
   String shortDescription;
   List<ItemsData> items;
+  ProfileData dataProfile;
 
   RegionsData({
     this.id,
@@ -25,6 +26,7 @@ class RegionsData {
     this.description,
     this.shortDescription,
     this.items,
+    this.dataProfile,
   });
 
   factory RegionsData.fromJson(Map<String, dynamic> json) => RegionsData(

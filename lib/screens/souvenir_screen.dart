@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:group_list_view/group_list_view.dart';
 import 'package:location/location.dart';
+import 'package:travel_explorer/api/web_service.dart';
 import 'package:travel_explorer/bloc/souvenir_bloc.dart';
 import 'package:travel_explorer/bloc/souvenir_events.dart';
 import 'package:travel_explorer/bloc/souvenir_states.dart';
@@ -20,11 +21,10 @@ class SouvenirScreen extends StatefulWidget {
   _SouvenirScreenState createState() => _SouvenirScreenState();
 }
 
-class _SouvenirScreenState extends State<SouvenirScreen> {
+class _SouvenirScreenState extends State<SouvenirScreen> implements ApiListener {
   //
   List<RegionsData> _regionsData = [];
 
-  LocationData userLocationData;
 ProfileData objProfileData;
   @override
   void initState() {
@@ -35,34 +35,39 @@ ProfileData objProfileData;
     objProfileData.name= 'Name';
     objProfileData.userLocation= 'Fetching your location details...';
 
-    Future.delayed(const Duration(milliseconds: 500), () {
-
-      print("Delay Binding");
-//GetFirebase Values and calculate distance based on the user  location
-      _loadUserLocation();
-      _loadSouvenirs();
-
-    });
+    _loadSouvenirs();
   }
 
+  @override
+  void onApiFailure(Object mObject) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text("Something went wrong"),
+    ));
+  }
+
+  @override
+  void onApiSuccess(Object mObject) {
+    //Get All Users
+    if (mObject is List<RegionsData>) {
+      _regionsData = mObject;
+      objProfileData.name = _regionsData[0].dataProfile.name;
+      objProfileData.userLocation= _regionsData[0].dataProfile.userLocation;
+      setState(() {});
+    }
+    else
+    {
+
+    }
+  }
+
+  @override
+  void onNoInternetConnection(Object mObject) {
+
+  }
   _loadSouvenirs() async {
-    context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
+    //context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
+    WebServices(this).fetchSouvenirCollections(context);
   }
-_loadUserLocation()
-{
-  //context.bloc<SouvenirBloc>().add(SouvenirEvents.fetchSouvenirCollections);
-
-  getLocationData().then((locationData){
-    userLocationData = locationData;
-    //To Update Location details
-    getLocationAddress(userLocationData).then((strAddress){
-      this.setState(() {
-        objProfileData.userLocation = strAddress;
-      });
-    });
-
-  });
-}
 
   @override
   Widget build(BuildContext context) {
@@ -93,9 +98,7 @@ _loadUserLocation()
                   onTap: _loadSouvenirs,
                 );
               }
-              if (state is SouvenirLoaded) {
-                //List<MyItinerary> itineraries = state.itineraries;
-                _regionsData = state.regionData;
+              if (_regionsData.length>0) {
                 return _loadList(_regionsData);
               }
               return Loading();
