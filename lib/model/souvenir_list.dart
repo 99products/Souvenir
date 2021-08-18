@@ -17,6 +17,7 @@ class RegionsData {
   String title;
   String description;
   String shortDescription;
+  String imageUrlThumbnail;
   List<ItemsData> items;
   ProfileData dataProfile;
 
@@ -25,6 +26,7 @@ class RegionsData {
     this.title,
     this.description,
     this.shortDescription,
+    this.imageUrlThumbnail,
     this.items,
     this.dataProfile,
   });
@@ -34,12 +36,14 @@ class RegionsData {
     title: json["title"],
     description: json["description"],
     shortDescription: json["shortDescription"],
+    imageUrlThumbnail: json["imageUrlThumbnail"],
   );
 
   Map<String, dynamic> toJson() => {
     "title": title,
     "id": id,
     "description": description,
+    "imageUrlThumbnail": imageUrlThumbnail,
   };
 }
 class ItemsData {
@@ -48,6 +52,8 @@ class ItemsData {
   String shortDescription;
   String latitude;
   String longitude;
+  String imageUrlThumbnail;
+  String imageUrlCapture;
   int distanceFromUserLocation;
 
   ItemsData({
@@ -56,6 +62,8 @@ class ItemsData {
     this.shortDescription,
     this.latitude,
     this.longitude,
+    this.imageUrlThumbnail,
+    this.imageUrlCapture,
     this.distanceFromUserLocation,
   });
 
@@ -64,7 +72,9 @@ class ItemsData {
     id: json["id"],
     shortDescription: json["shortDescription"],
     latitude: json["latitude"],
-    longitude: json["longitude"]
+    longitude: json["longitude"],
+    imageUrlThumbnail: json["imageUrlThumbnail"],
+      imageUrlCapture: json["imageUrlCapture"]
   );
 
   Map<String, dynamic> toJson() => {
@@ -73,6 +83,8 @@ class ItemsData {
     "shortDescription": shortDescription,
     "latitude": latitude,
     "longitude":longitude,
+    "imageUrlThumbnail": imageUrlThumbnail,
+    "imageUrlCapture":imageUrlCapture,
   };
 }
 

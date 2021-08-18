@@ -32,6 +32,7 @@ class DashboardServices implements SouvenirCollectionRepo {
         dataRegions.title = resultRegions.data()['Title'];
         dataRegions.description = resultRegions.data()['Description'];
         dataRegions.shortDescription = resultRegions.data()['ShortDescription'];
+        dataRegions.imageUrlThumbnail = resultRegions.data()['imageUrlThumbnail'];
         dataRegions.items = await getFirebaseItemValues(resultRegions.data()['ID'],locData);
         arrayRegions.add(dataRegions);
       });
@@ -54,6 +55,8 @@ class DashboardServices implements SouvenirCollectionRepo {
         dataItems.shortDescription = resultItems.data()['ShortDescription'];
         dataItems.latitude = resultItems.data()['latitude'];
         dataItems.longitude = resultItems.data()['longitude'];
+        dataItems.imageUrlThumbnail = resultItems.data()['imageUrlThumbnail'];
+        dataItems.imageUrlCapture = resultItems.data()['imageUrlCapture'];
         dataItems.distanceFromUserLocation = calculateDistanceBetweenTwoPoints(locData.latitude,locData.longitude,double.parse(resultItems.data()['latitude']),double.parse(resultItems.data()['longitude'])).toInt();
         arrayItems.add(dataItems);
       });
