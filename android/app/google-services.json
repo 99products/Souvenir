@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "312941970106-4bk2mmglj2qbps5hjkb4rq53bipq1t95.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ninetynine.travel_explorer",
+            "certificate_hash": "844f76227743f70e6ff9151f7bd046ba49965adc"
+          }
+        },
+        {
           "client_id": "312941970106-1ubbm0jfvhf7p65m3vl83ta7jd9rjvdm.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "312941970106-1ubbm0jfvhf7p65m3vl83ta7jd9rjvdm.apps.googleusercontent.com",
+              "client_id": "112094399344896132993",
               "client_type": 3
             },
             {
