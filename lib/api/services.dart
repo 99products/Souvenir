@@ -48,7 +48,7 @@ class DashboardServices implements SouvenirCollectionRepo {
 
     await FirebaseFirestore.instance.collection("collection_items").where("ID", isEqualTo:strID).get().then((value) {
       value.docs.forEach((resultItems) {
-        //print('resultItems ${resultItems.data()}');
+        print('resultItems ${resultItems.data()}');
         ItemsData dataItems = new ItemsData();
         dataItems.id = resultItems.data()['ID'];
         dataItems.title = resultItems.data()['Title'];
