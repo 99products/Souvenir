@@ -11,3 +11,10 @@ build/**
 .flutter-plugins-dependencies
 pubspec.lock
 .env
+*.log
+.firebaserc
+firestore.indexes.json
+firestore.rules
+firebase.json
+.runtimeconfig.json
+storage.rules
