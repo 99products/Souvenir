@@ -18,3 +18,4 @@ firestore.rules
 firebase.json
 .runtimeconfig.json
 storage.rules
+google-services.json

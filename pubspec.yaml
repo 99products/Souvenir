@@ -21,17 +21,18 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   cloud_firestore: ^1.0.6
   cupertino_icons: ^1.0.2
   equatable: ^1.2.4
   firebase_analytics: ^7.1.1
   firebase_core: ^1.0.1
+  flutter:
+    sdk: flutter
   flutter_bloc: ^6.0.4
   flutter_dotenv: ^5.0.0
   geocoder: ^0.2.1
   google_maps_flutter: ^2.0.1
+  google_sign_in: ^5.0.7
   group_list_view: ^1.1.1
   http: ^0.13.0
   location: ^4.2.0
@@ -57,6 +58,7 @@ flutter:
     - assets/images/mountain.jpeg
     - .env
     - assets/contract/contract.json
+    - assets/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
