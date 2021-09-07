@@ -55,11 +55,11 @@ class WebServices {
       querySnapshot.docs.forEach((resultRegions) async {
         print(resultRegions);
         RegionsData dataRegions = new RegionsData();
-        dataRegions.id = resultRegions.data()['ID'];
-        dataRegions.title = resultRegions.data()['Title'];
-        dataRegions.description = resultRegions.data()['Description'];
-        dataRegions.shortDescription = resultRegions.data()['ShortDescription'];
-        dataRegions.items = await getFirebaseItemValues(resultRegions.data()['ID'],locData);
+        dataRegions.id = resultRegions.data()['id'];
+        dataRegions.title = resultRegions.data()['title'];
+        dataRegions.description = resultRegions.data()['description'];
+        dataRegions.shortDescription = resultRegions.data()['shortDescription'];
+        dataRegions.items = await getFirebaseItemValues(resultRegions.data()['id'],locData);
         dataRegions.dataProfile = profileData;
         arrayRegions.add(dataRegions);
 
@@ -90,11 +90,11 @@ class WebServices {
       querySnapshot.docs.forEach((resultRegions) async {
         print(resultRegions);
         RegionsData dataRegions = new RegionsData();
-        dataRegions.id = resultRegions.data()['ID'];
-        dataRegions.title = resultRegions.data()['Title'];
-        dataRegions.description = resultRegions.data()['Description'];
-        dataRegions.shortDescription = resultRegions.data()['ShortDescription'];
-        dataRegions.items = await getFirebaseItemValues(resultRegions.data()['ID'],locData);
+        dataRegions.id = resultRegions.data()['id'];
+        dataRegions.title = resultRegions.data()['title'];
+        dataRegions.description = resultRegions.data()['description'];
+        dataRegions.shortDescription = resultRegions.data()['shortDescription'];
+        dataRegions.items = await getFirebaseItemValues(resultRegions.data()['id'],locData);
         arrayRegions.add(dataRegions);
       });
     });
@@ -106,13 +106,13 @@ class WebServices {
     await Firebase.initializeApp();
     List<ItemsData> arrayItems=[];
 
-    await FirebaseFirestore.instance.collection("collection_items").where("ID", isEqualTo:strID).get().then((value) {
+    await FirebaseFirestore.instance.collection("collection_items").where("id", isEqualTo:strID).get().then((value) {
       value.docs.forEach((resultItems) {
         //print('resultItems ${resultItems.data()}');
         ItemsData dataItems = new ItemsData();
-        dataItems.id = resultItems.data()['ID'];
-        dataItems.title = resultItems.data()['Title'];
-        dataItems.shortDescription = resultItems.data()['ShortDescription'];
+        dataItems.id = resultItems.data()['id'];
+        dataItems.title = resultItems.data()['title'];
+        dataItems.shortDescription = resultItems.data()['shortDescription'];
         dataItems.latitude = resultItems.data()['latitude'];
         dataItems.longitude = resultItems.data()['longitude'];
         dataItems.distanceFromUserLocation = calculateDistanceBetweenTwoPoints(locData.latitude,locData.longitude,double.parse(resultItems.data()['latitude']),double.parse(resultItems.data()['longitude'])).toInt();

@@ -46,6 +46,6 @@ Future<String> getLocationAddress(LocationData loc) async
       coordinates);
   var first = addresses.first;
 
-  return '${first.subLocality}, ${first.locality}, ${first.adminArea}';
+  return '${first.locality}, ${first.adminArea}';//${first.subLocality},
   //print('locality ${first.locality},adminArea ${first.adminArea},subLocality ${first.subLocality},subAdminArea ${first.subAdminArea},addressLine ${first.addressLine},featureName ${first.featureName},thoroughfare ${first.thoroughfare},subThoroughfare ${first.subThoroughfare}');
 }

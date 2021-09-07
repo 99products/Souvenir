@@ -13,7 +13,7 @@ class ItemRow extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Hero(
-            tag: Key('key' + "https://q-cf.bstatic.com/images/hotel/max1024x768/209/209735787.jpg"),
+            tag: Key("${itemsData.distanceFromUserLocation} https://q-cf.bstatic.com/images/hotel/max1024x768/209/209735787.jpg"),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(22, 20, 22, 10),//EdgeInsets.all(32.0),
               child: ClipRRect(

@@ -52,7 +52,10 @@ class ProfileScreenState extends State<ProfileScreen> {
       }
     });
     _googleSignIn.signInSilently();
+
   }
+
+
 
   Future<void> _handleGetContact(GoogleSignInAccount user) async {
     setState(() {

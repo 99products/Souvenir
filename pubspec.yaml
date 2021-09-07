@@ -26,6 +26,7 @@ dependencies:
   equatable: ^1.2.4
   firebase_analytics: ^7.1.1
   firebase_core: ^1.0.1
+  firebase_auth:
   flutter:
     sdk: flutter
   flutter_bloc: ^6.0.4

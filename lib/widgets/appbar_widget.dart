@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_explorer/model/souvenir_list.dart';
+import 'package:travel_explorer/screens/profile_page.dart';
 import 'package:travel_explorer/screens/profile_screen.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -23,7 +24,7 @@ class AppBarWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()),
+                      MaterialPageRoute(builder: (context) => LoginPageWidget()),
                     );
                   },
                 ),
